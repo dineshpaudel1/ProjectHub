@@ -26,7 +26,7 @@ const Home = () => {
       className="min-h-screen flex items-center justify-center bg-center"
       style={{
         backgroundImage: `url(${isMobile ? mobile : laptop})`, // Conditional background image
-        backgroundSize: isMobile ? '450px 800px' : '900px 600px', // Adjust size for mobile.png, use 'cover' for mybg.png
+        backgroundSize: isMobile ? '420px 770px' : '900px 600px', // Adjust size for mobile.png, use 'cover' for mybg.png
         backgroundRepeat: 'no-repeat', // Prevent the image from repeating
         backgroundPosition: 'center', // Center the image
       }}
