@@ -6,6 +6,7 @@ const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Function to check screen width and update state
+  //this is add for commit
   const checkScreenWidth = () => {
     setIsMobile(window.innerWidth <= 768); // 768px is a common breakpoint for mobile devices
   };
@@ -31,6 +32,7 @@ const Home = () => {
         backgroundPosition: 'center', // Center the image
       }}
     >
+
       <div className="text-center max-w-2xl px-10 relative z-10">
         {/* Main Heading */}
         <h1 className="text-3xl sm:text-5xl font-bold mb-4 animate-fade-in text-gray-900">
