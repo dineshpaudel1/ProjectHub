@@ -5,8 +5,7 @@ import laptop from "../assets/images/mybg.png"
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Function to check screen width and update state
-  //this is add for commit
+
   const checkScreenWidth = () => {
     setIsMobile(window.innerWidth <= 768); // 768px is a common breakpoint for mobile devices
   };
@@ -27,7 +26,7 @@ const Home = () => {
       className="min-h-screen flex items-center justify-center bg-center"
       style={{
         backgroundImage: `url(${isMobile ? mobile : laptop})`, // Conditional background image
-        backgroundSize: isMobile ? '420px 770px' : '900px 600px', // Adjust size for mobile.png, use 'cover' for mybg.png
+        backgroundSize: isMobile ? '410px 750px' : '900px 600px', // Adjust size for mobile.png, use 'cover' for mybg.png
         backgroundRepeat: 'no-repeat', // Prevent the image from repeating
         backgroundPosition: 'center', // Center the image
       }}
