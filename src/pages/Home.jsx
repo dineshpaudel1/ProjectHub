@@ -26,14 +26,14 @@ const Home = () => {
       className="min-h-screen flex items-center justify-center bg-center"
       style={{
         backgroundImage: `url(${isMobile ? mobile : laptop})`, // Conditional background image
-        backgroundSize: isMobile ? '650px 900px' : '900px 600px', // Adjust size for mobile.png, use 'cover' for mybg.png
+        backgroundSize: isMobile ? '450px 800px' : '900px 600px', // Adjust size for mobile.png, use 'cover' for mybg.png
         backgroundRepeat: 'no-repeat', // Prevent the image from repeating
         backgroundPosition: 'center', // Center the image
       }}
     >
       <div className="text-center max-w-2xl px-10 relative z-10">
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-5xl font-bold mb-4 animate-fade-in text-gray-900 ml-9">
+        <h1 className="text-3xl sm:text-5xl font-bold mb-4 animate-fade-in text-gray-900">
           Welcome to{' '}
           <span
             className="bg-gradient-to-r from-[#ff0000] to-[#252de6] bg-clip-text text-transparent"
@@ -46,18 +46,18 @@ const Home = () => {
         </h1>
 
         {/* Subheading */}
-        <h2 className="text-2xl sm:text-2xl font-semibold mb-5 animate-fade-in delay-100 text-gray-800 ml-9">
+        <h2 className="text-2xl sm:text-2xl font-semibold mb-5 animate-fade-in delay-100 text-gray-800">
           Your Gateway to Innovative Projects
         </h2>
 
         {/* Paragraph */}
-        <p className="text-base sm:text-lg mb-8 animate-fade-in delay-200 text-gray-700 ml-10">
+        <p className="text-base sm:text-lg mb-8 animate-fade-in delay-200 text-gray-700">
           Discover, share, and collaborate on cutting-edge projects. Whether you're a developer, designer, or enthusiast.
         </p>
 
         {/* Explore Button */}
         <button
-          className="ml-9 px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300 animate-fade-in delay-300"
+          className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300 animate-fade-in delay-300"
         >
           Explore Projects
         </button>

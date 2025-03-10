@@ -18,46 +18,53 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-100 bg-gray-100 py-2">
+    <div className="min-h-screen bg-gray-100 py-8">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
           Our Projects
         </h2>
         <p className="text-lg text-gray-600 animate-fade-in delay-100">
-          All Project Have Complete document with their code
+          All Projects Have Complete Documentation with Their Code
         </p>
       </div>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-2  ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
           {currentProjects.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden relative h-[400px]">
-              <div className="absolute top-2 left-2 bg-[#252de6] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                {project.price}
-              </div>
-              {project.discount && (
-                <div className="absolute top-2 right-2 bg-[#ff0000] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  50% Off
+            <div
+              key={project.id}
+              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col min-h-[400px]"
+            >
+              <div className="relative">
+                <div className="absolute top-2 left-2 bg-[#252de6] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  {project.price}
                 </div>
-              )}
-              <img src={project.image} alt={project.title} className="w-70 h-50 " />
-              <div className="p-4">
+                {project.discount && (
+                  <div className="absolute top-2 right-2 bg-[#ff0000] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    50% Off
+                  </div>
+                )}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <div className="p-4 flex-1">
                 <h2 className="text-xl font-semibold text-gray-800 line-clamp-1 overflow-hidden overflow-ellipsis">
                   {project.title}
                 </h2>
-                <p className="mt-2 text-gray-600 line-clamp-1 overflow-hidden overflow-ellipsis">
+                <p className="mt-2 text-gray-600 line-clamp-2 overflow-hidden overflow-ellipsis">
                   {project.description}
                 </p>
               </div>
-              <div className="p-4 flex flex-col sm:flex-row justify-between items-center">
+              <div className="p-4">
                 <button
                   onClick={() => handleBuyNow(project.id)}
-                  className="w-full sm:w-60 px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300 animate-fade-in delay-300"
+                  className="w-full px-4 py-2 text-sm sm:text-lg font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300"
                 >
                   View Project
                 </button>
               </div>
-
-
             </div>
           ))}
         </div>
