@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from "../assets/logos/projecthub.png"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
             {/* Logo */}
             <div>
               <a href="/" className="flex items-center py-4 px-2">
-                <img src="/projecthub.png" alt="Project Hub Logo" className="h-10 w-auto" />
+                <img src={logo} alt="Project Hub Logo" className="h-10 w-auto" />
               </a>
             </div>
             {/* Primary Navbar items */}

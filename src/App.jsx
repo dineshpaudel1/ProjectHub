@@ -23,7 +23,7 @@ const App = () => {
     <Router>
       <Routes>
         {/* Wrap all routes that need Navbar and Footer with the Layout component */}
-        <Route path="/" element={<Layout />}>
+        <Route path="/ProjectHub" element={<Master />}>
           <Route index element={<Master />} /> {/* Default route */}
           <Route path="projects" element={<Projects />} />
           <Route path="contact" element={<Contact />} />
