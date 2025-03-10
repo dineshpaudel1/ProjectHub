@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import mobile from "../assets/images/mobile.png"
+import laptop from "../assets/images/mybg.png"
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -23,7 +25,7 @@ const Home = () => {
       id="home"
       className="min-h-screen flex items-center justify-center bg-center"
       style={{
-        backgroundImage: `url(${isMobile ? '/mobile.png' : '/mybg.png'})`, // Conditional background image
+        backgroundImage: `url(${isMobile ? mobile : laptop})`, // Conditional background image
         backgroundSize: isMobile ? '650px 900px' : '900px 600px', // Adjust size for mobile.png, use 'cover' for mybg.png
         backgroundRepeat: 'no-repeat', // Prevent the image from repeating
         backgroundPosition: 'center', // Center the image
