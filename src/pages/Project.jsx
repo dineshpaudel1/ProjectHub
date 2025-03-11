@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import projects from '../utils/ProjectData';
+import App from '../App';
 
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
