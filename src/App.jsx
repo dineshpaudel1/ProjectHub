@@ -22,12 +22,11 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Wrap all routes that need Navbar and Footer with the Layout component */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Master />} /> {/* Default route */}
           <Route path="projects" element={<Projects />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="/projectdetail/:id" element={<ProjectDetail />} />
+          <Route path="projectdetail/:id" element={<ProjectDetail />} />
         </Route>
       </Routes>
     </Router>

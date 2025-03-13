@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import projects from '../utils/ProjectData';
-import App from '../App';
 
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,6 +16,8 @@ const Projects = () => {
   const handleBuyNow = (id) => {
     navigate(`/projectdetail/${id}`);
   };
+
+
 
   return (
     <div className="min-h-screen bg-gray-100 py-8">

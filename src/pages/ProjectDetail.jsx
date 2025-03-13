@@ -86,7 +86,7 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4 font-sans">
+    <div className="mt-10 flex justify-center items-center min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4 font-sans">
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-4xl border border-slate-200 mt-10">
         {/* Project Video with Overlay */}
         <div className="relative w-full h-[400px] group">
