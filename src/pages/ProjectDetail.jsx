@@ -17,7 +17,6 @@ import {
   Maximize,
   Minimize,
 } from "lucide-react";
-import video from "../assets/videos/video.mp4";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -93,7 +92,7 @@ const ProjectDetail = () => {
           {/* Video Element */}
           <video
             ref={videoRef}
-            src={video}
+            src={project.video}
             className="w-full h-full object-cover"
             onClick={togglePlayPause}
           />
