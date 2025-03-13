@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/ProjectHub" element={<Layout />}>
+        <Route path="ProjectHub" element={<Layout />}>
           <Route index element={<Master />} /> {/* Default route */}
           <Route path="projects" element={<Projects />} />
           <Route path="contact" element={<Contact />} />
