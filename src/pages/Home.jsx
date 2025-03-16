@@ -5,7 +5,6 @@ import laptop from "../assets/images/mybg.png"
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-
   const checkScreenWidth = () => {
     setIsMobile(window.innerWidth <= 768); // 768px is a common breakpoint for mobile devices
   };
@@ -31,10 +30,9 @@ const Home = () => {
         backgroundPosition: 'center', // Center the image
       }}
     >
-
       <div className="text-center max-w-2xl px-10 relative z-10">
         {/* Main Heading */}
-        <h1 className="text-3xl sm:text-5xl font-bold mb-4 animate-fade-in text-gray-900">
+        <h1 className="text-3xl sm:text-5xl font-bold mb-4 animate-fade-in text-gray-900 font-serif">
           Welcome to{' '}
           <span
             className="bg-gradient-to-r from-[#ff0000] to-[#252de6] bg-clip-text text-transparent"
@@ -47,18 +45,18 @@ const Home = () => {
         </h1>
 
         {/* Subheading */}
-        <h2 className="text-2xl sm:text-2xl font-semibold mb-5 animate-fade-in delay-100 text-gray-800">
+        <h2 className="text-2xl sm:text-2xl font-semibold mb-5 animate-fade-in delay-100 text-gray-800 font-serif">
           Your Gateway to Innovative Projects
         </h2>
 
         {/* Paragraph */}
-        <p className="text-base sm:text-lg mb-8 animate-fade-in delay-200 text-gray-700">
+        <p className="text-base sm:text-lg mb-8 animate-fade-in delay-200 text-gray-700 font-serif">
           Discover, share, and collaborate on cutting-edge projects. Whether you're a developer, designer, or enthusiast.
         </p>
 
         {/* Explore Button */}
         <button
-          className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300 animate-fade-in delay-300"
+          className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300 animate-fade-in delay-300 font-serif"
         >
           Explore Projects
         </button>
