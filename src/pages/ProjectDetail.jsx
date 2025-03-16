@@ -344,7 +344,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           {/* Facebook */}
           <div className="flex flex-col items-center">
             <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/satiingraju.sattingraju/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-700 transition-all"
@@ -364,7 +364,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           {/* Instagram */}
           <div className="flex flex-col items-center">
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/divashpaudel/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-500 hover:text-pink-600 transition-all"
