@@ -6,10 +6,10 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in font-serif">
             Contact Us
           </h2>
-          <p className="text-lg text-gray-600 animate-fade-in delay-100">
+          <p className="text-lg text-gray-600 animate-fade-in delay-100 font-serif">
             Have questions or want to collaborate? Reach out to us!
           </p>
         </div>
@@ -20,41 +20,41 @@ const Contact = () => {
           <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in">
             <form>
               <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 font-serif">
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   placeholder="Your Name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#252de6]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#252de6] font-serif"
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                <label htmlFor="email" className="block text-gray-700 font-semibold mb-2 font-serif">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   placeholder="Your Email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#252de6]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#252de6] font-serif"
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
+                <label htmlFor="message" className="block text-gray-700 font-semibold mb-2 font-serif">
                   Message
                 </label>
                 <textarea
                   id="message"
                   rows="5"
                   placeholder="Your Message"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#252de6]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#252de6] font-serif"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-[#ff0000] to-[#252de6] text-white font-semibold rounded-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition duration-300"
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#ff0000] to-[#252de6] text-white font-semibold rounded-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition duration-300 font-serif"
               >
                 Send Message
               </button>
@@ -65,7 +65,7 @@ const Contact = () => {
           <div className="animate-fade-in delay-100">
             {/* Contact Information */}
             <div className="bg-white p-8 rounded-lg shadow-md mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 font-serif">Get in Touch</h3>
               <ul className="space-y-4">
                 <li className="flex items-center">
                   <svg
@@ -87,7 +87,7 @@ const Contact = () => {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <p className="text-gray-600">Lalitpur, Nepal</p>
+                  <p className="text-gray-600 font-serif">Lalitpur, Nepal</p>
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -103,7 +103,7 @@ const Contact = () => {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  <p className="text-gray-600">+977 9847503434</p>
+                  <p className="text-gray-600 font-serif">+977 9847503434</p>
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -119,7 +119,7 @@ const Contact = () => {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <p className="text-gray-600">paudeldinesh961@gmail.com</p>
+                  <p className="text-gray-600 font-serif">paudeldinesh961@gmail.com</p>
                 </li>
               </ul>
             </div>

@@ -17,52 +17,50 @@ const Projects = () => {
     navigate(`projectdetail/${id}`);
   };
 
-
-
   return (
     <div id='projects' className="min-h-screen bg-gray-100 py-8">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4 animate-fade-in">
           Our Projects
         </h2>
-        <p className="text-lg text-gray-600 animate-fade-in delay-100">
+        <p className="text-lg text-gray-600 font-serif animate-fade-in delay-100">
           All Projects Have Complete Documentation with Their Code
         </p>
       </div>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
           {currentProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col min-h-[400px]"
+              className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col min-h-[300px] border border-gray-200 hover:shadow-md transition-shadow duration-300"
             >
               <div className="relative">
-                <div className="absolute top-2 left-2 bg-[#252de6] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-2 left-2 bg-[#252de6] text-white px-2 py-1 rounded-full text-xs font-semibold">
                   {project.price}
                 </div>
                 {project.discount && (
-                  <div className="absolute top-2 right-2 bg-[#ff0000] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-2 right-2 bg-[#ff0000] text-white px-2 py-1 rounded-full text-xs font-semibold">
                     50% Off
                   </div>
                 )}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-32 object-cover"
                 />
               </div>
               <div className="p-4 flex-1">
-                <h2 className="text-xl font-semibold text-gray-800 line-clamp-1 overflow-hidden overflow-ellipsis">
+                <h2 className="text-lg font-serif font-semibold text-gray-800 line-clamp-1 overflow-hidden overflow-ellipsis">
                   {project.title}
                 </h2>
-                <p className="mt-2 text-gray-600 line-clamp-2 overflow-hidden overflow-ellipsis">
+                <p className="mt-2 text-sm text-gray-600 font-serif line-clamp-2 overflow-hidden overflow-ellipsis">
                   {project.description}
                 </p>
               </div>
               <div className="p-4">
                 <button
                   onClick={() => handleBuyNow(project.id)}
-                  className="w-full px-4 py-2 text-sm sm:text-lg font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-lg hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300"
+                  className="w-full px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#ff0000] to-[#252de6] rounded-lg shadow-sm hover:from-[#ff4444] hover:to-[#4a54e8] transition-all duration-300"
                 >
                   View Project
                 </button>
@@ -73,21 +71,21 @@ const Projects = () => {
         <div className="flex justify-center mt-8">
           <button
             onClick={() => paginate(1)}
-            className={`mx-1 px-4 py-2 rounded ${currentPage === 1 ? 'bg-[#ff0000] text-white' : 'bg-gray-200 text-gray-700'
+            className={`mx-1 px-4 py-2 rounded font-serif ${currentPage === 1 ? 'bg-[#ff0000] text-white' : 'bg-gray-200 text-gray-700'
               }`}
           >
             1
           </button>
           <button
             onClick={() => paginate(2)}
-            className={`mx-1 px-4 py-2 rounded ${currentPage === 2 ? 'bg-[#ff0000] text-white' : 'bg-gray-200 text-gray-700'
+            className={`mx-1 px-4 py-2 rounded font-serif ${currentPage === 2 ? 'bg-[#ff0000] text-white' : 'bg-gray-200 text-gray-700'
               }`}
           >
             2
           </button>
           <button
             onClick={() => paginate(3)}
-            className={`mx-1 px-4 py-2 rounded ${currentPage === 3 ? 'bg-[#ff0000] text-white' : 'bg-gray-200 text-gray-700'
+            className={`mx-1 px-4 py-2 rounded font-serif ${currentPage === 3 ? 'bg-[#ff0000] text-white' : 'bg-gray-200 text-gray-700'
               }`}
           >
             3
@@ -95,7 +93,7 @@ const Projects = () => {
           <button
             onClick={() => paginate(currentPage + 1)}
             disabled={currentPage === Math.ceil(projects.length / projectsPerPage)}
-            className="mx-1 px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-[#252de6] hover:text-white transition duration-300"
+            className="mx-1 px-4 py-2 bg-gray-200 text-gray-700 rounded font-serif hover:bg-[#252de6] hover:text-white transition duration-300"
           >
             Next
           </button>

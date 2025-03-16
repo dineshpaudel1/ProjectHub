@@ -45,6 +45,7 @@ const projects = [
     discount: false, // No discount
     video: book
   },
+
   
 ];
 
