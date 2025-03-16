@@ -25,14 +25,14 @@ const ProjectDetail = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [activeTab, setActiveTab] = useState("details");
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const videoRef = useRef(null); // Reference to the video element
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const selectedProject = projects.find(p => p.id === parseInt(id));
     setProject(selectedProject);
   }, [id]);
 
-  // Play/Pause functionality
   const togglePlayPause = () => {
     if (videoRef.current.paused) {
       videoRef.current.play();
@@ -43,17 +43,14 @@ const ProjectDetail = () => {
     }
   };
 
-  // Skip forward by 10 seconds
   const skipForward = () => {
     videoRef.current.currentTime += 10;
   };
 
-  // Skip backward by 10 seconds
   const skipBackward = () => {
     videoRef.current.currentTime -= 10;
   };
 
-  // Toggle fullscreen
   const toggleFullscreen = () => {
     if (!isFullscreen) {
       if (videoRef.current.requestFullscreen) {
@@ -89,41 +86,31 @@ const ProjectDetail = () => {
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-4xl border border-slate-200 mt-10">
         {/* Project Video with Overlay */}
         <div className="relative w-full h-[400px] group">
-          {/* Video Element */}
           <video
             ref={videoRef}
             src={project.video}
             className="w-full h-full object-cover"
             onClick={togglePlayPause}
           />
-
-          {/* Video Controls Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-            {/* Skip Backward Button */}
             <button
               onClick={skipBackward}
               className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/30 transition-all duration-300"
             >
               <SkipBack className="text-white w-6 h-6" />
             </button>
-
-            {/* Play/Pause Button */}
             <button
               onClick={togglePlayPause}
               className="bg-white/20 backdrop-blur-md p-4 rounded-full hover:bg-white/30 transition-all duration-300"
             >
               {isPlaying ? <Pause className="text-white w-8 h-8" /> : <Play className="text-white w-8 h-8" />}
             </button>
-
-            {/* Skip Forward Button */}
             <button
               onClick={skipForward}
               className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/30 transition-all duration-300"
             >
               <SkipForward className="text-white w-6 h-6" />
             </button>
-
-            {/* Fullscreen Button */}
             <button
               onClick={toggleFullscreen}
               className="bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/30 transition-all duration-300"
@@ -135,8 +122,6 @@ const ProjectDetail = () => {
               )}
             </button>
           </div>
-
-          {/* Featured Badge */}
           <div className="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium">
             Featured
           </div>
@@ -145,10 +130,7 @@ const ProjectDetail = () => {
         <div className="px-8 py-6">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div className="flex-1">
-              {/* Project Title */}
               <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mt-2">{project.title}</h1>
-
-              {/* Rating */}
               <div className="flex items-center mt-4 space-x-2">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
@@ -159,8 +141,6 @@ const ProjectDetail = () => {
                 <span className="text-slate-400">•</span>
                 <span className="text-emerald-600 text-sm font-medium">1,234 purchases</span>
               </div>
-
-              {/* Project Description */}
               <div className="mt-6">
                 <p className="text-slate-600 leading-relaxed">
                   {showFullDescription ? project.description : `${project.description.substring(0, 120)}...`}
@@ -179,30 +159,28 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {/* Price Card */}
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm w-full md:w-72 flex-shrink-0">
               <div className="flex items-baseline">
                 <span className="text-3xl font-bold text-slate-800">${project.price}</span>
                 <span className="text-lg text-slate-600 ml-1">.99</span>
               </div>
-
               <div className="mt-1 flex items-center">
                 <span className="line-through text-slate-400 text-sm">$299.99</span>
                 <span className="ml-2 bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-0.5 rounded">
                   33% OFF
                 </span>
               </div>
-
-              <button className="mt-4 w-full py-3 px-4 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-medium rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="mt-4 w-full py-3 px-4 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-medium rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg"
+              >
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Request to Buy
               </button>
-
               <p className="text-xs text-slate-500 mt-3 text-center">30-day money-back guarantee</p>
             </div>
           </div>
 
-          {/* Tabs */}
           <div className="mt-10 border-t border-slate-200 pt-6">
             <div className="flex space-x-6 border-b border-slate-200">
               <button
@@ -225,7 +203,6 @@ const ProjectDetail = () => {
               </button>
             </div>
 
-            {/* Tab Content */}
             <div className="py-6">
               {activeTab === "details" && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -304,6 +281,53 @@ const ProjectDetail = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Render the modal */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </div>
+  );
+};
+
+const ContactModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white rounded-lg p-6 w-80">
+        <h2 className="text-xl font-bold mb-4">Contact Us</h2>
+        <div className="space-y-4">
+          <a
+            href={`https://wa.me/9847503434`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-green-500 text-white text-center py-2 rounded-lg hover:bg-green-600 transition-all"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="https://www.facebook.com/satiingraju.sattingraju/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-all"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/divashpaudel/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-pink-500 text-white text-center py-2 rounded-lg hover:bg-pink-600 transition-all"
+          >
+            Instagram
+          </a>
+        </div>
+        <button
+          onClick={onClose}
+          className="mt-4 w-full py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-all"
+        >
+          Close
+        </button>
       </div>
     </div>
   );

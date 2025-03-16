@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <a href="/ProjectHub" className="flex items-center">
               <img
                 src={logo || "/placeholder.svg"}
                 alt="Project Hub Logo"
