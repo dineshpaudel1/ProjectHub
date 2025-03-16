@@ -7,13 +7,11 @@ import Contact from './Contact'
 
 const Master = () => {
   return (
-      <>
-          <Navbar />
-          <Home />
-          <Projects />
-          <Contact />
-          <Footer />
-      </>
+    <>
+      <Home />
+      <Projects />
+      <Contact />
+    </>
   )
 }
 

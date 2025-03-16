@@ -11,7 +11,9 @@ import Footer from './layouts/Footer';
 const Layout = () => {
   return (
     <>
+      <Navbar />
       <Outlet /> {/* This will render the nested routes */}
+      <Footer />
     </>
   );
 };
